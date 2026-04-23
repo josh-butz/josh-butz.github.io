@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Josh Butzberger - Floating Directory</title>
+<link rel='stylesheet' href="aamaster.css">
+<style> 
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Keeps the photos inside the "aquarium" */
+    height: 100vh;
+    width: 100vw;
+    background-color: #AECFC6; /* Restored your original color */
+}
+
+h1 {
+    text-align: center;
+    position: relative;
+    z-index: 100; /* Keeps the title above the floating images */
+}
+
+img {
+    border-radius: 10%;
+    -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 50%, transparent 80%);
+    mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 50%, transparent 80%);
+    
+    position: absolute;
+    width: 180px; 
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect to bring a specific photo to the front */
+a:hover img {
+    z-index: 999;
+    transform: scale(1.1);
+}
+
+/* Define individual floating animations to keep them separated */
+@keyframes float1 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(30vw, 40vh); } }
+@keyframes float2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-20vw, 60vh); } }
+@keyframes float3 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(50vw, -20vh); } }
+@keyframes float4 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-40vw, -30vh); } }
+
+/* Assign unique starting positions and different animations to every link */
+a:nth-of-type(1) img { top: 10%; left: 10%; animation: float1 20s infinite alternate ease-in-out; }
+a:nth-of-type(2) img { top: 15%; left: 70%; animation: float2 24s infinite alternate ease-in-out; }
+a:nth-of-type(3) img { top: 70%; left: 15%; animation: float3 22s infinite alternate ease-in-out; }
+a:nth-of-type(4) img { top: 60%; left: 75%; animation: float4 26s infinite alternate ease-in-out; }
+a:nth-of-type(5) img { top: 40%; left: 40%; animation: float1 28s infinite alternate ease-in-out; }
+a:nth-of-type(6) img { top: 5%; left: 45%; animation: float2 18s infinite alternate ease-in-out; }
+a:nth-of-type(7) img { top: 80%; left: 45%; animation: float3 21s infinite alternate ease-in-out; }
+a:nth-of-type(8) img { top: 30%; left: 5%; animation: float4 25s infinite alternate ease-in-out; }
+a:nth-of-type(9) img { top: 30%; left: 85%; animation: float1 23s infinite alternate ease-in-out; }
+a:nth-of-type(10) img { top: 85%; left: 5%; animation: float2 19s infinite alternate ease-in-out; }
+a:nth-of-type(11) img { top: 85%; left: 85%; animation: float3 27s infinite alternate ease-in-out; }
+a:nth-of-type(12) img { top: 50%; left: 20%; animation: float4 22s infinite alternate ease-in-out; }
+a:nth-of-type(13) img { top: 20%; left: 30%; animation: float1 30s infinite alternate ease-in-out; }
+a:nth-of-type(14) img { top: 70%; left: 60%; animation: float2 20s infinite alternate ease-in-out; }
+
+</style>
+</head>
+<body>
+<h1>CSC 2333 HY Class Directory</h1>
+<a href="https://www.barslan.dev/"><img src="https://www.barslan.dev/myphoto.jpg"></a>
+<a href="https://www.imanibeharry.com/"><img src="https://www.imanibeharry.com/myphoto.jpg"></a>
+<a href="https://www.lburgee.com/"><img src="https://www.lburgee.com/myphoto.jpg"></a>
+<a href="https://josh-butz.github.io/myphoto.jpg"><img src="https://josh-butz.github.io/myphoto.jpg"></a>
+<a href="https://www.johnnyhceleste.com/"><img src="https://www.johnnyhceleste.com/myphoto.jpg" width="200"></a>
+<a href="https://www.cmfrancis.com/"><img src="https://www.cmfrancis.com/myphoto.jpg"></a>
+<a href="https://www.calvinhyrkas.com/"><img src="https://www.calvinhyrkas.com/myphoto.jpg"></a>
+<a href="https://www.aleatherman.com/"><img src="https://ajisbeast.github.io/Adam-Leatherman-Website/myphoto.jpg"></a>
+<a href="https://www.lindorchristian.com/"><img src="https://www.lindorchristian.com/myphoto.jpg"></a>
+<a href="https://yaxsama.github.io/"><img src="https://yaxsama.github.io/myphoto.jpg"></a>
+<a href="https://www.kyletokeefe.com/"><img src="https://kyletokeefe.com/myphoto.jpg"></a>
+<a href="https://www.jazmineolmos.com/"><img src="https://www.jazmineolmos.com/myphoto.jpg"></a>
+<a href="https://www.srshaler.com/"><img src="https://www.srshaler.com/myphoto.jpg"></a>
+<a href="https://www.lukesstevens.com/"><img src="https://www.lukesstevens.com/myphoto.jpg"></a>
+</body>
+</html>
