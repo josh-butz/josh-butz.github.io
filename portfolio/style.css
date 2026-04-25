@@ -1,0 +1,87 @@
+/* Color Palette: Slate Blue and Soft White */
+body {
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f7f9; /* Light grey-blue background */
+}
+
+header {
+    background-color: #2c3e50; /* Deep slate blue */
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 4px solid #3498db; /* Bright blue accent */
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #3498db;
+}
+
+/* Container Styling */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Image Aesthetics */
+.portfolio-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+    border-radius: 6px;
+    background-color: #ddd; /* Gray placeholder if image is missing */
+}
+
+/* Specific size for the 2nd photo as requested */
+.small-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* Keeps image from looking squished */
+    border: 2px solid #2c3e50;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #2c3e50;
+    color: white;
+    margin-top: 50px;
+}
+
+/* Responsive: Mobile Friendly */
+@media (max-width: 600px) {
+    header h1 { font-size: 1.8rem; }
+    nav a { display: block; margin: 10px 0; }
+    main { padding: 10px; }
+}
