@@ -1,13 +1,22 @@
+My bad! I completely misunderstood where you were headed there. I was thinking of "generating" images, but you're talking about the CSS masking you already have on your profile picture!
+
+To get those soft, faded edges on your movie posters, we just need to copy the -webkit-mask-image and mask-image properties from your profile picture style and apply them to the .movie-pic class.
+
+Here is the updated code:
+
+HTML
 <html> 
 <head>
 <title>Josh Butzberger - Home</title>
 <style> 
     body {background-color: #208AB0;}
     
-    img {
+    /* Your main profile picture style */
+    .profile-main {
         border-radius: 10%;
         -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 50%, transparent 75%);
         mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 50%, transparent 75%);
+        cursor: pointer;
     }
 
     .button-link {
@@ -22,12 +31,46 @@
         font-weight: bold;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
+
+    /* Container to keep things side-by-side */
+    .header-layout {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    /* Hidden movies container */
+    .movie-row {
+        display: flex;
+        gap: 15px;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        padding-top: 10px;
+    }
+
+    /* Show movies and fade them in when hovering */
+    .profile-main:hover + .movie-row, 
+    .movie-row:hover {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* MOVIE PICTURES: Applying your soft edge feature here */
+    .movie-pic {
+        width: 120px;
+        height: auto;
+        border: 2px solid red;
+        border-radius: 10%;
+        /* This is the "soft edge" code from your main photo */
+        -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 50%, transparent 75%);
+        mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 50%, transparent 75%);
+    }
 </style>
 <link rel='stylesheet' href="aamaster.css">
 </head>
 <body>
 
-<!-- New Button added to the left -->
 <a href="https://josh-butz.github.io/portfolio/" class="button-link">Portfolio</a>
 <a href="https://www.pba.edu/" class="button-link">PBA</a>
 <a href="directory.html" class="button-link">Class Directory</a>
@@ -42,7 +85,18 @@
 <br><br>
 
 <h1>Josh Butzberger</h1>
-<img src="myphoto.jpg" width="200">
+
+<div class="header-layout">
+    <img src="myphoto.jpg" width="200" class="profile-main">
+
+    <div class="movie-row">
+        <img src="movie1.png" class="movie-pic">
+        <img src="movie2.png" class="movie-pic">
+        <img src="movie3.png" class="movie-pic">
+        <img src="movie4.png" class="movie-pic">
+    </div>
+</div>
+
 <p>CSC 2333 HY Website Development</p>
 <p><i>Thursdays 12:30-1:45 PM</i></p>
 
@@ -56,10 +110,10 @@
     <p> Dinner - <a href="dinner.png">Filet Mignon</a></p>
     <p> Snack - <a href="snack.png">Nutella Biscuits</a></p>
 </td>
-<td><img src="breakfast.png" height ="150"></td>
-<td><img src="lunch.png" height ="150"></td>
-<td><img src="dinner.png" height ="150"></td>
-<td><img src="snack.png" height ="150"></td>
+<td><img src="breakfast.png" height ="150" style="border-radius:10%"></td>
+<td><img src="lunch.png" height ="150" style="border-radius:10%"></td>
+<td><img src="dinner.png" height ="150" style="border-radius:10%"></td>
+<td><img src="snack.png" height ="150" style="border-radius:10%"></td>
 </tr>
 </table>
 
